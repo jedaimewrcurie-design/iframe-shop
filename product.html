@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>รายละเอียดสินค้า</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #EAF6FF;
+  margin: 0;
+}
+
+header {
+  background: #A7D8FF;
+  padding: 15px;
+  text-align: center;
+  color: white;
+}
+
+.container {
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.price {
+  color: red;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.btn {
+  background: #6BB6E8;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>I FRAME SHOP</header>
+
+<div class="container">
+  <div class="card">
+    <img id="img">
+
+    <h2 id="name"></h2>
+
+    <p id="detail"></p>
+
+    <p class="price" id="price"></p>
+
+    <button class="btn">ซื้อเลย</button>
+  </div>
+</div>
+
+<script>
+// 🔥 DATABASE สินค้า
+const products = {
+  1: {
+    name: "Free Fire ID",
+    detail: "Rank Heroic / สกินเยอะ",
+    price: "฿150",
+    img: "https://via.placeholder.com/400x250"
+  },
+  2: {
+    name: "ROV ID",
+    detail: "Conqueror / ตัวครบ",
+    price: "฿300",
+    img: "https://via.placeholder.com/400x250"
+  },
+  3: {
+    name: "Genshin ID",
+    detail: "5★ หลายตัว / พร้อมเล่น",
+    price: "฿500",
+    img: "https://via.placeholder.com/400x250"
+  }
+};
+
+// 📌 ดึง ID จาก URL
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+// 📌 เอาข้อมูลมาใส่
+const product = products[id];
+
+document.getElementById("name").innerText = product.name;
+document.getElementById("detail").innerText = product.detail;
+document.getElementById("price").innerText = product.price;
+document.getElementById("img").src = product.img;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>I FRAME SHOP</title>
+<div style="overflow:hidden;">
+  <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 80px; width: 100%;">
+    <path d="M0.00,49.98 C150.00,150.00 349.77,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #EAF6FF;"></path>
+  </svg>
+</div>
+<div class="ticker">
+  <div class="ticker-text">
+    🔥 ไอดีเข้าใหม่ทุกวัน | 💬 แอดมินตอบไว | ⚡ ส่งทันทีหลังโอน | 🔒 ปลอดภัย 100% | ⭐ มีรีวิวจริง |
+  </div>
+</div>
+<a href="login.html">
+  <button class="btn" style="position:absolute; right:20px; top:10px;">
+    Login
+  </button>
+</a>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+
+  background-image: url("https://i.redd.it/v6gjxmfkor461.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ชั้นมืด + ฟ้า (แก้ปัญหาหลัก) */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(167,216,255,0.7)
+  );
+  z-index: -1;
+}
+
+/* overlay */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(234, 246, 255, 0.85);
+  z-index: -1;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(90deg, #6BB6E8, #4da3db);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  padding: 15px;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  width: 80%;
+  margin: 40px auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  width: 80%;
+  margin: 30px auto;
+}
+
+.hero h1 {
+  font-size: 30px;
+}
+
+.hero p {
+  color: #444;
+}
+
+/* BUTTON */
+.btn {
+  background: linear-gradient(135deg, #6BB6E8, #4da3db);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* CONTAINER */
+.container {
+  padding: 20px;
+}
+
+/* TITLE */
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* GRID */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  padding: 18px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: 0.3s;
+  position: relative;
+  animation: fadeIn 0.6s ease;
+}
+.card {
+  animation: floatUp 0.6s ease;
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(107, 182, 232, 0.6);
+}
+
+/* BADGE */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* PRICE */
+.price {
+  color: #ff3b3b;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* STATUS */
+.status {
+  font-size: 14px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #A7D8FF;
+  color: white;
+  margin-top: 30px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 18px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* เส้นเรืองแสง */
+.card::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent, rgba(107,182,232,0.5), transparent);
+  transform: rotate(25deg);
+  top: -100%;
+  left: -100%;
+  transition: 0.5s;
+}
+.card:hover::before {
+  top: 100%;
+  left: 100%;
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+.ticker {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #6BB6E8, #4da3db);
+  color: white;
+  overflow: hidden;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+/* คำอธิบายวิ่งผ่าน */
+.ticker-text {
+  white-space: nowrap;
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollText 15s linear infinite;
+  font-size: 14px;
+  box-shadow: 0 -2px 15px rgba(0,0,0,0.3);
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  I FRAME SHOP
+</header>
+
+<section class="hero">
+  <h1>🎮 ร้านขายไอดีเกม ปลอดภัย 100%</h1>
+  <p>รีวิวจริง | ส่งไว | เชื่อถือได้</p>
+  <p style="margin-top:10px;">🔒 ปลอดภัย | 💬 ตอบไว | ⚡ ส่งทันที</p>
+  <br>
+  <button class="btn">เลือกซื้อ ID</button>
+</section>
+
+<div class="container">
+  <div class="section-title">🔥 สินค้าแนะนำ</div>
+
+  <div class="products">
+
+    <div class="card">
+      <div class="badge">🔥 ขายดี</div>
+      <img src="https://via.placeholder.com/300x200">
+      <h3>Free Fire ID</h3>
+      <p>Rank Heroic / สกินเยอะ</p>
+      <p class="status" style="color:green;">✅ พร้อมขาย</p>
+      <p class="price">฿150</p>
+      <button class="btn" onclick="goToProduct(1)">ดูรายละเอียด</button>
+    </div>
+
+    <div class="card">
+      <div class="badge" style="background:orange;">⭐ Rare</div>
+      <img src="https://via.placeholder.com/300x200">
+      <h3>ROV ID</h3>
+      <p>Conqueror / ตัวครบ</p>
+      <p class="status" style="color:green;">✅ พร้อมขาย</p>
+      <p class="price">฿300</p>
+      <button class="btn" onclick="goToProduct(2)">ดูรายละเอียด</button>
+    </div>
+
+    <div class="card">
+      <div class="badge">🔥 ลดราคา</div>
+      <img src="https://via.placeholder.com/300x200">
+      <h3>Genshin ID</h3>
+      <p>5★ หลายตัว / พร้อมเล่น</p>
+      <p class="status" style="color:red;">❌ ขายแล้ว</p>
+      <p class="price">฿500</p>
+      <button class="btn" onclick="goToProduct(3)">ดูรายละเอียด</button>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 I FRAME SHOP
+</footer>
+
+<script>
+function goToProduct(id) {
+  window.location.href = "product.html?id=" + id;
+}
+const elements = document.querySelectorAll('.fade-up');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 50){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
+</script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Login - I FRAME SHOP</title>
+
+<style>
+body {
+  font-family: 'Segoe UI';
+  background: linear-gradient(to bottom, #A7D8FF, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* กล่อง */
+.box {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 300px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* input */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* ปุ่ม */
+button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #6BB6E8;
+  color: white;
+  cursor: pointer;
+}
+
+/* toggle */
+.toggle {
+  text-align: center;
+  margin-top: 10px;
+  cursor: pointer;
+  color: blue;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2 id="title">Login</h2>
+
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+
+  <button onclick="submitForm()">เข้าสู่ระบบ</button>
+
+  <div class="toggle" onclick="toggleMode()">
+    ยังไม่มีบัญชี? สมัครสมาชิก
+  </div>
+</div>
+
+<script>
+let isLogin = true;
+
+// สลับ Login / Register
+function toggleMode() {
+  isLogin = !isLogin;
+
+  document.getElementById("title").innerText = isLogin ? "Login" : "Register";
+  document.querySelector("button").innerText = isLogin ? "เข้าสู่ระบบ" : "สมัครสมาชิก";
+  document.querySelector(".toggle").innerText = isLogin 
+    ? "Don't have an account yet? Sign up" 
+    : "Already have an account? Log in.";
+}
+
+// กดปุ่ม
+function submitForm() {
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+
+  if (!user || !pass) {
+    alert("กรอกข้อมูลให้ครบ!");
+    return;
+  }
+
+  if (isLogin) {
+    // LOGIN
+    const savedUser = localStorage.getItem("user");
+    const savedPass = localStorage.getItem("pass");
+
+    if (user === savedUser && pass === savedPass) {
+      alert("เข้าสู่ระบบสำเร็จ!");
+      window.location.href = "index.html";
+    } else {
+      alert("ข้อมูลไม่ถูกต้อง!");
+    }
+
+  } else {
+    // REGISTER
+    localStorage.setItem("user", user);
+    localStorage.setItem("pass", pass);
+
+    alert("สมัครสมาชิกสำเร็จ!");
+  }
+}
+</script>
+
+</body>
+</html>
